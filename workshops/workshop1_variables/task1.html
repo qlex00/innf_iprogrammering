@@ -14,7 +14,7 @@
             <div id="coins"><img src="img/coins.png" /> <span id="coins-count">0</span></div>
             <div id="player">
                 <img src="img/person.png" />
-                <span id="playername">A</span>
+                <span id="playername">Marius</span>
             </div>
             <div id="points"><img src="img/points.png" /> <span id="points-count">0</span></div>
         </section>
@@ -40,9 +40,32 @@
             </table>
         </aside>
     </div>
+
     <script>
-        let user_name = `Hei ${playername}`;
-        document.getElementById("palyername").innerHTML = user_name;
+        const playerName = "Hei"
+        document.getElementById("playername").innerHTML = playerName
+
+        let coins = 15
+
+        document.getElementById("coins-count").innerHTML = coins
+
+        let lives = 5
+
+        document.getElementById("lives-count").innerHTML = lives
+
+        let longsword = 3
+        let warhammer = 1
+        let battleaxe = 1
+        let armour = 2
+
+        document.getElementById("weapon-longsword").innerHTML = longsword
+        document.getElementById("weapon-warhammer").innerHTML = warhammer
+        document.getElementById("weapon-battleaxe").innerHTML = battleaxe
+        document.getElementById("weapon-armour").innerHTML = armour
+
+        let points = (coins * 5) + (longsword * 5) + (warhammer * 15) + (battleaxe * 20) + (armour * 25)
+        document.getElementById("points-count").innerHTML = points
+
     </script>
 </body>
 </html>
