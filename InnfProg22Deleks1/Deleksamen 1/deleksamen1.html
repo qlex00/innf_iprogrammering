@@ -24,38 +24,55 @@
 
         //Klargjør variabler for utregning
         const startingPoint = 255
-        let checksum = 0 //1 kommando deklarer verdi som kan endres 
+        let checksum = 0 
+        //Feil nr.1 Kommando "const" deklarer verdi som ikke kan endres, derfor bytter jeg til kommando "let" sånn at verdi kan endres
         const multiplier = 3
         //Ditt navn. PS: Bytt denne til ditt navn.
+
+        /*Manglet en / for kommentaren over, fordi det var ikke kode, men insturksjon, det stopper koden fra å funke, 
+        det går å slette kommentaren og koden funer unten linjen, jeg valgte å beholde linjen bare når jeg bytta den til en kommentar som ikke synes i koden*/ 
+
         //Selve navnebyttet er ikke en feil som teller mot de 10 feilene du skal finne.
-        const myName = "Aleksandra"; //2 feil datatype
+        const myName = "Aleksandra"; 
+        /*Feil nr.2 Byttet fra Marius til mitt navn, men også la det i en string datatype fordi uten gåsetegn så leser java det som en variabel-verdi 
+        og da blir det bruk av feil datatype*/
 
         //Klargjør variabel for bygging av tekst
-        let greeting = ""; //3 stavefeil i kommando
+        let greeting = ""; 
+        //Feil nr.3 Stavefeil i kommando "let" slettet 1 t bokstav
         const saluteClass = "pyro";
 
         
         //Kontroller datatype
-        if(typeof myName === "Aleksandra") { //4 datatype
-            checksum = startingPoint * multiplier //5 skrivefeil 
+        if(typeof myName === "Aleksandra") { 
+        //Feil nr.4 datatype
+            checksum = startingPoint * multiplier 
+            //Feil nr.5 Skrivefeil i variabelnavnet "cheksum" for mange "mm" da viser betingelsen "if" ikke tilbake til variablen 
         } else {
             checksum = startingPoint
         }
         
-
+        
         //Kontroller checksum
-        if(checksum === 765) { //6 feil bruk av operator
+        if(checksum === 765) { 
+        /*Feil nr.6 Bruk av feil operator, operator "!==" betyr det er ikke likt og ikke samme datatype, 
+        (operator "!===" finnes ikke, det var skrivefeil der og) 
+        men utregningen av "cheksum" er lik "765" derfor bruker jeg operator "===" som betyr at variabel er lik og av samme datatype*/
             greeting = "beklager"
         } else {
             greeting = "gratulerer"
         
-            const output = greeting + ", " + myName + "<br />Du klarte det!" //7 skrivefeil
+            const output = greeting + ", " + myName + "<br />Du klarte det!" 
+            //Feil nr.7 Skrivefeil i variabel "greeting" for mange "e"
             const textElement = document.getElementById("text");
-            //feil id
-            const saluteElement = document.getElementById("salute") //8 skrivefeil
-            textElement.removeAttribute("animation") //9 ingen klasse navn
+            //Feil nr.8 Feil id, id "text" var skrevet med storebokstaver og da kan ikke java hente id-en
+            const saluteElement = document.getElementById("salute") 
+            //Feil nr.9 Skrivefeil i globale variabelen, siste bokstaven i ordet "Id" var skrevet med stor "D" som er en vanling skrivefeil
+            textElement.removeAttribute("class")
             textElement.innerHTML = output
-            saluteElement.setAttribute("class",saluteClass) //10 skrivefeil p
+            saluteElement.setAttribute("class",saluteClass) 
+            /*Feil nr.10 Skrivefeil på varibelnavnet, i koden er navnet gitt med en storbokstave "C" i ordet "Class" 
+            det er bedre å skille mellom ord hvis andre ordet starter med en stor bokstav*/ 
             document.body.setAttribute("class","success") 
         }    
         /*
