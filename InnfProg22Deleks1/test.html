@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deleksamen 1 - Feilsøking</title>
+    <link href="styles.css" rel="stylesheet" media="screen" />
+</head>
+<body>
+    <h1 id="text" class="animation">Error</h1>
+    <div id="salute">
+        <div class="before"></div>
+        <div class="after"></div>
+    </div>
+
+    <script>
+            const startingPoint = 255
+            const checksum = 0
+            const multiplier = 3
+
+            const myName = "Aleksandra";
+            let greeting = "gratulerer"; //2 skrivefeil
+            const saluteClass = "pyro";
+
+
+            const output = greeting + ", " + myName + "<br />Du klarte det!" //5 skrivefeil
+            const textElement = document.getElementById("text");
+            const saluteElement = document.getElementById("salute") //6 skrivefeil
+            textElement.removeAttribute("animation")
+            textElement.innerHTML = output
+            saluteElement.setAttribute("class",saluteClass) //7 skrivefeil
+            document.body.setAttribute("class","success")
+
+    </script>
+</body>
+</html>

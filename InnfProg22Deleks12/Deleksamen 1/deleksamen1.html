@@ -24,40 +24,37 @@
 
         //Klargjør variabler for utregning
         const startingPoint = 255
-        let checksum = 0 //1 kommando deklarer verdi som kan endres 
+        const checksum = 0
         const multiplier = 3
         //Ditt navn. PS: Bytt denne til ditt navn.
         //Selve navnebyttet er ikke en feil som teller mot de 10 feilene du skal finne.
-        const myName = "Aleksandra"; //2 feil datatype
+        const myName = ""; 
 
         //Klargjør variabel for bygging av tekst
-        let greeting = ""; //3 stavefeil i kommando
+        let greeting = ""; 
         const saluteClass = "pyro";
 
-        
         //Kontroller datatype
-        if(typeof myName === "Aleksandra") { //4 datatype
-            checksum = startingPoint * multiplier //5 skrivefeil 
+        if(typeof myName === "string") {
+            checksum = startingPoint * multiplier 
         } else {
             checksum = startingPoint
         }
-        
 
         //Kontroller checksum
-        if(checksum === 765) { //6 feil bruk av operator
+        if(checksum != 765) { 
             greeting = "beklager"
         } else {
             greeting = "gratulerer"
-        
-            const output = greeting + ", " + myName + "<br />Du klarte det!" //7 skrivefeil
-            const textElement = document.getElementById("text");
-            //feil id
-            const saluteElement = document.getElementById("salute") //8 skrivefeil
-            textElement.removeAttribute("animation") //9 ingen klasse navn
+            const output = greeting + ", " + myName + "<br />Du klarte det!" 
+            const textElement = document.getElementById("TEXT");
+            const saluteElement = document.getElementById("salute") 
+            textElement.removeAttribute("class")
             textElement.innerHTML = output
-            saluteElement.setAttribute("class",saluteClass) //10 skrivefeil p
-            document.body.setAttribute("class","success") 
-        }    
+            saluteElement.setAttribute("class",saluteClass) 
+            document.body.setAttribute("class","success")
+        }
+
         /*
          * IKKE ENDRE NOE ETTER DENNE KOMMENTAREN
          */
