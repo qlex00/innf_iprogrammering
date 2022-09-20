@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors - Deleksamen 2 - Innføring i Programmering</title>
+
+    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
         :root {
@@ -87,6 +90,7 @@
         }
         .bg-green, #winner {
             background: var(--green);
+            /*#FFD700*/
         }
         .choiceAnimate {
             animation: zoom-in-zoom-out .7s ease-in-out;
@@ -114,6 +118,7 @@
         }
         #replay {
             background: var(--green);
+            /*#FFD700*/
             color: #fff;
             font-size: 1.5rem;
             border: 2px solid var(--gray);
@@ -128,7 +133,7 @@
         <div id="playerSigns">
             <h2 id="instruction">Play your hand:<span id="choice"></span></h2>
             <button type="button" onClick="play('rock')" id="rockButton" class="playerChoice"><img src="rock.jpg" alt="Rock" /></button>
-            <!--playy is not defined-->
+            <!--Oppgave 1. Feil nr.1 i konsol: "playy is not defined", skrivefeil i ordet "play" 1 "y" for mye-->
             <button type="button" onClick="play('paper')" id="paperButton" class="playerChoice"><img src="paper.jpg" alt="Paper" /></button>
             <button type="button" onClick="play('scissors')" id="scissorsButton" class="playerChoice"><img src="scissors.jpg" alt="Scissors" /></button>
         </div>
@@ -139,6 +144,7 @@
             <!-- HTML element to show computer selection -->
         </div>
         <div id="winner">
+        <!--#FFD700-->
             <!-- HTML element to show winner -->
         </div>
         <div id="counterBox">
@@ -151,6 +157,7 @@
     <script>
         //We'll prepare an empty variable that later will contain the winner
         let winner = ""
+        //#FFD700
         //And prepare a counter-variable for number of games played:
         let counter = 0
         //Make available signs available in code as an array
@@ -164,7 +171,7 @@
          * On mouseout, remove the text and class
          */
         buttons.forEach(button => { 
-        //buttonss is not defined
+        //Oppgave 1. Feil nr.2 i konsol: "buttonss is not defined" skrivefeil i ordet "buttons", 1 "s" for mye
             button.addEventListener("mouseover", (event) => {
                 document.getElementById("choice").innerHTML = button.childNodes[0].alt
                 document.getElementById("choice").setAttribute("class","choiceAnimate")
@@ -206,12 +213,11 @@
             console.log("Computer selected: " + computerSign)
             // Good! Now we also have to show this on the website, by making #computer visible and filling it with HTML:
             const computer = document.getElementById("computer")
-
-            //document.getElementByID is not a function
+            //Oppagve 1 feil nr.3 "document.getElementByID is not a function" storbokstav "D" i document variablen
             
             computer.style.display = "block"
-            /* OPPGAVE 2.1: FORKLAR HVA SOM SKJER PÅ LINJE 208
-             * _ditt svar her_ 
+            /* OPPGAVE 2.1: FORKLAR HVA SOM SKJER PÅ LINJE OVER
+             * _henter variabel "computer" som henter id "computer" fra htmlen og legger en stil som viser en "block"_ 
              */
 
             computer.innerHTML = "Computer selects " + computerSign
@@ -255,17 +261,21 @@
             const winnerDiv = document.getElementById("winner")
             winnerDiv.style.display = "block"
 
+            //Oppgave 5
+
             winnerDiv.innerHTML = "The winner is " + winner
-            /* OPPGAVE 2.2: FORKLAR HVA SOM SKJER PÅ LINJE 254
-             * _ditt svar her_ 
+            /* OPPGAVE 2.2: FORKLAR HVA SOM SKJER PÅ LINJE OVER
+             * _Henter variblen "winnerDiv" som har lagret globale variablen "document" som henter id "winner" 
+             og stilen som viser "block", skriver ut java, string og "winner" som utfall av betingelsen_ 
              */
 
             //Now, lastly, let's update the counter on how many games we have played:
             counter = counter + 1
 
             document.getElementById("counter").innerHTML = counter
-            /* OPPGAVE 2.3: FORKLAR HVA SOM SKJER PÅ LINJE 262
-             * _ditt svar her_ 
+            /* OPPGAVE 2.3: FORKLAR HVA SOM SKJER PÅ LINJE OVER
+             * _document vairablen henter "counter" id fra html og innerHTML henter ut verdien satt av variablen "counter" som 
+             oppdaterer forste "counter" variablen _ 
              */
 
             //And display the button for playing again:
@@ -291,7 +301,8 @@
         }
 
         //Function for random numnber, fetched from MDN web docs:
-        function getRandomInt(max) { // unexpected token: identifier
+        function getRandomInt(max) { 
+        //Oppgave 1. feil nr.4 "unexpected token: identifier" manglet bokstaven "f" for at koden av funksjon var riktig
             return Math.floor(Math.random() * max);
         }
     </script>

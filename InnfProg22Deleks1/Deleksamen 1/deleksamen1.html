@@ -25,7 +25,7 @@
         //Klargjør variabler for utregning
         const startingPoint = 255
         let checksum = 0 
-        //Feil nr.1 Kommando "const" deklarer verdi som ikke kan endres, derfor bytter jeg til kommando "let" sånn at verdi kan endres
+        /*Feil nr.1 Kommando "const" deklarer verdi som ikke kan endres, derfor bytter jeg til kommando "let" sånn at verdi kan endres*/
         const multiplier = 3
         //Ditt navn. PS: Bytt denne til ditt navn.
 
@@ -39,15 +39,15 @@
 
         //Klargjør variabel for bygging av tekst
         let greeting = ""; 
-        //Feil nr.3 Stavefeil i kommando "let" slettet 1 t bokstav
+        /*Feil nr.3 Stavefeil i kommando "let" slettet 1 t bokstav*/
         const saluteClass = "pyro";
 
         
         //Kontroller datatype
-        if(typeof myName === "Aleksandra") { 
-        //Feil nr.4 datatype
+        if(typeof myName === "") { 
+        /*Feil nr.4 "string" er riktig datatype, men bytter ut tekststrengen i stringen for å feilsøke "myName" variablen*/ 
             checksum = startingPoint * multiplier 
-            //Feil nr.5 Skrivefeil i variabelnavnet "cheksum" for mange "mm" da viser betingelsen "if" ikke tilbake til variablen 
+            /*Feil nr.5 Skrivefeil i variabelnavnet "cheksum" for mange "mm" da viser betingelsen "if" ikke tilbake til variablen*/
         } else {
             checksum = startingPoint
         }
@@ -63,11 +63,11 @@
             greeting = "gratulerer"
         
             const output = greeting + ", " + myName + "<br />Du klarte det!" 
-            //Feil nr.7 Skrivefeil i variabel "greeting" for mange "e"
+            /*Feil nr.7 Skrivefeil i variabel "greeting" for mange "e"*/
             const textElement = document.getElementById("text");
-            //Feil nr.8 Feil id, id "text" var skrevet med storebokstaver og da kan ikke java hente id-en
+            /*Feil nr.8 Feil id, id "text" var skrevet med storebokstaver og da kan ikke java hente id-en*/
             const saluteElement = document.getElementById("salute") 
-            //Feil nr.9 Skrivefeil i globale variabelen, siste bokstaven i ordet "Id" var skrevet med stor "D" som er en vanling skrivefeil
+            /*Feil nr.9 Skrivefeil i globale variabelen, siste bokstaven i ordet "Id" var skrevet med stor "D" som er en vanling skrivefeil*/
             textElement.removeAttribute("class")
             textElement.innerHTML = output
             saluteElement.setAttribute("class",saluteClass) 
