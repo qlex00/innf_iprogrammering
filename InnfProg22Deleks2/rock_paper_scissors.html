@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors - Deleksamen 2 - Innføring i Programmering</title>
 
-    
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
         :root {
@@ -90,7 +88,6 @@
         }
         .bg-green, #winner {
             background: var(--green);
-            /*#FFD700*/
         }
         .choiceAnimate {
             animation: zoom-in-zoom-out .7s ease-in-out;
@@ -118,7 +115,6 @@
         }
         #replay {
             background: var(--green);
-            /*#FFD700*/
             color: #fff;
             font-size: 1.5rem;
             border: 2px solid var(--gray);
@@ -144,7 +140,6 @@
             <!-- HTML element to show computer selection -->
         </div>
         <div id="winner">
-        <!--#FFD700-->
             <!-- HTML element to show winner -->
         </div>
         <div id="counterBox">
@@ -157,12 +152,12 @@
     <script>
         //We'll prepare an empty variable that later will contain the winner
         let winner = ""
-        //#FFD700
+
         //And prepare a counter-variable for number of games played:
         let counter = 0
         //Make available signs available in code as an array
         const signs = ["rock", "paper", "scissors"]
-        
+
         //Find all buttons in the document.
         const buttons = document.querySelectorAll(".playerChoice");
         /* 
@@ -217,7 +212,7 @@
             
             computer.style.display = "block"
             /* OPPGAVE 2.1: FORKLAR HVA SOM SKJER PÅ LINJE OVER
-             * _henter variabel "computer" som henter id "computer" fra htmlen og legger en stil som viser en "block"_ 
+             * _henter variabel "computer" som henter id "computer" fra htmlen og legger på en stil som viser en "block"_ 
              */
 
             computer.innerHTML = "Computer selects " + computerSign
@@ -258,28 +253,47 @@
             }
             //Now we have checks to set the winner. Let's write it to the website.
             //Now you know the drill: show #winner by display: block and fill it with HTML:
+            
             const winnerDiv = document.getElementById("winner")
             winnerDiv.style.display = "block"
+            //Oppgave 4
+            if(winner = "player"){
+                winnerDiv.style.backgroundColor = "#FFD700"
+            }
 
             //Oppgave 5
-
             winnerDiv.innerHTML = "The winner is " + winner
             /* OPPGAVE 2.2: FORKLAR HVA SOM SKJER PÅ LINJE OVER
              * _Henter variblen "winnerDiv" som har lagret globale variablen "document" som henter id "winner" 
-             og stilen som viser "block", skriver ut java, string og "winner" som utfall av betingelsen_ 
+             samtidig stilen som viser "block","innerHTML" skriver ut java, string og "winner" som utfall av betingelsen_ 
              */
+            /*if(winner = "player"){
+                winnerDiv.innerHTML = "You win" + winner
+            }
 
+            if(winner = "computer"){
+                winnerDiv.innerHTML = "You lost" + winner
+            }
+
+            if(winner = "undecided"){
+                winnerDiv.innerHTML = "It's a tie" + winner
+            }*/
             //Now, lastly, let's update the counter on how many games we have played:
             counter = counter + 1
 
             document.getElementById("counter").innerHTML = counter
             /* OPPGAVE 2.3: FORKLAR HVA SOM SKJER PÅ LINJE OVER
              * _document vairablen henter "counter" id fra html og innerHTML henter ut verdien satt av variablen "counter" som 
-             oppdaterer forste "counter" variablen _ 
+             oppdaterer første "counter" variablen_ 
              */
 
             //And display the button for playing again:
             document.getElementById("replay").style.display = "block"
+
+            //Oppgave 4
+            if(counter > 1){
+            document.getElementById("counter").style.color = "red"
+            }
         }
 
         //Now, we need to make a function that restarts the game. This means setting all 
